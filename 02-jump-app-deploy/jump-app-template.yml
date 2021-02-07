@@ -212,7 +212,7 @@ objects:
               - name: APP_REF_NAME
                 value: jump-app
               - name: REACT_APP_BACK
-                value: https://back-golang-v1-${USER_NAMESPACE}.apps.acidonpe.sandbox507.opentlc.com/jump
+                value: https://back-golang-${USER_NAMESPACE}.apps.acidonpe.sandbox507.opentlc.com/jump
               - name: REACT_APP_GOLANG
                 value: http://back-golang-v1:8442
               - name: REACT_APP_SPRINGBOOT
@@ -329,20 +329,6 @@ objects:
   - apiVersion: route.openshift.io/v1
     kind: Route
     metadata:
-      name: back-golang-v1
-    spec:
-      to:
-        kind: Service
-        name: back-golang-v1
-      port:
-        targetPort: http-8442
-      tls:
-        termination: edge
-        insecureEdgeTerminationPolicy: Redirect
-      wildcardPolicy: None
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
       name: back-golang
     spec:
       to:
@@ -350,20 +336,6 @@ objects:
         name: back-golang-v1
       port:
         targetPort: http-8442
-      tls:
-        termination: edge
-        insecureEdgeTerminationPolicy: Redirect
-      wildcardPolicy: None
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
-      name: front-javascript-v1
-    spec:
-      to:
-        kind: Service
-        name: front-javascript-v1
-      port:
-        targetPort: http-8080
       tls:
         termination: edge
         insecureEdgeTerminationPolicy: Redirect

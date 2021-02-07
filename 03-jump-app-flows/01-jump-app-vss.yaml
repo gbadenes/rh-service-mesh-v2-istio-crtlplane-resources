@@ -13,7 +13,6 @@ objects:
       - mesh
       hosts:
       - back-golang-${USER_NAMESPACE}.${OCP_APPS_DOMAIN}
-      - back-golang-v1-${USER_NAMESPACE}.${OCP_APPS_DOMAIN}
       - back-golang.${USER_NAMESPACE}.svc.cluster.local
       - back-golang
       http:
@@ -64,7 +63,6 @@ objects:
       - mesh
       hosts:
       - front-javascript-${USER_NAMESPACE}.${OCP_APPS_DOMAIN}
-      - front-javascript-v1-${USER_NAMESPACE}.${OCP_APPS_DOMAIN}
       - front-javascript.${USER_NAMESPACE}.svc.cluster.local
       - front-javascript
       http:

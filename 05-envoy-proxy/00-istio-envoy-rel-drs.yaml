@@ -14,11 +14,13 @@ objects:
       configPatches:
         - applyTo: HTTP_FILTER
           match:
-            context: GATEWAY
+            context: ANY
             listener:
               filterChain:
                 filter:
                   name: "envoy.http_connection_manager"
+                  subFilter:
+                    name: "envoy.router"
           patch:
             operation: INSERT_BEFORE
             value:

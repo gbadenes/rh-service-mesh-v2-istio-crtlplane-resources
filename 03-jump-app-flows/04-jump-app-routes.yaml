@@ -31,34 +31,6 @@ objects:
         insecureEdgeTerminationPolicy: Redirect
       port:
         targetPort: http2
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
-      name: back-golang-v1-${USER_NAMESPACE}
-    spec:
-      host: back-golang-v1-${USER_NAMESPACE}.${OCP_APPS_DOMAIN}
-      to:
-        kind: Service
-        name: istio-ingressgateway
-      tls:
-        termination: edge
-        insecureEdgeTerminationPolicy: Redirect
-      port:
-        targetPort: http2
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
-      name: front-javascript-v1-${USER_NAMESPACE}
-    spec:
-      host: front-javascript-v1-${USER_NAMESPACE}.${OCP_APPS_DOMAIN}
-      to:
-        kind: Service
-        name: istio-ingressgateway
-      tls:
-        termination: edge
-        insecureEdgeTerminationPolicy: Redirect
-      port:
-        targetPort: http2
 parameters:
   - description: Tutorial User Namespace
     displayName: Tutorial User Namespace
