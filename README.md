@@ -8,7 +8,8 @@ Service Mesh: Envoy & Istio Control Plane Tutorial Resources
 
 ```$bash
 vi params.env
-USER_NAMESPACE="user_xx"
+USER_NAMESPACE="userXX_namespace"
+OCP_APPS_DOMAIN="apps.labs.mydomain.com"
 ```
 
 ## 02 - Deploy _Jump App_ Microservices
