@@ -22,9 +22,9 @@ objects:
               subset: v1
             weight: 50
           - destination:
-            host: back-golang.${USER_NAMESPACE}.svc.cluster.local
-            subset: v2
-          weight: 50
+              host: back-golang.${USER_NAMESPACE}.svc.cluster.local
+              subset: v2
+            weight: 50
         match:
           - uri:
               regex: /.*
