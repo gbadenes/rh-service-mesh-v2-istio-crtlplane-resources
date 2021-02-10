@@ -23,13 +23,13 @@ objects:
             weight: 100
         match:
           - uri:
-              prefix: /.*
+              regex: /.*
         rewrite:
           uri: "/jump"
         headers:
           response:
             set:
-              Redirection: istio-envoy-relationship-test
+              redirection: istio-envoy-relationship-test
 parameters:
   - description: Tutorial User Namespace
     displayName: Tutorial User Namespace
