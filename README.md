@@ -77,8 +77,23 @@ oc process -f 04-istio-envoy-relationship/02-istio-envoy-rel-ses.yaml --param-fi
 - Deploy a _Jump App_ Envoy Filter using an Openshift Template 
 
 ```$bash
-oc process -f 05-envoy-proxy/00-istio-envoy-rel-drs.yaml --param-file=params.env --ignore-unknown-parameters | oc create -f -
+oc process -f 05-envoy-proxy/00-istio-envoy-rel-ef.yaml --param-file=params.env --ignore-unknown-parameters | oc apply -f - -n {namespace}
 ```
+
+## 07 - Istio Global Services
+
+- Modify existing gateway object
+
+```$bash
+oc process -f 07-istio-sds/00-jump-app-front-gw.yaml --param-file=params.env --ignore-unknown-parameters | oc apply -f - -n istio-system
+```
+
+- Modify existing route object
+
+```$bash
+oc process -f 07-istio-sds/01-jump-app-front-route.yaml --param-file=params.env --ignore-unknown-parameters | oc apply -f - -n istio-system
+```
+
 
 ## Author Information
 
